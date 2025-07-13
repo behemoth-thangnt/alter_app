@@ -1,6 +1,6 @@
-import '../../../../core/constants/api_constants.dart';
 import '../../../../core/network/graphql_client.dart';
 import '../models/course_collection_model.dart';
+import '../constants/course_api_constants.dart';
 
 abstract class CourseRemoteDataSource {
   Future<CourseCollectionModel> getUserCourses({
@@ -62,7 +62,7 @@ class CourseRemoteDataSourceImpl implements CourseRemoteDataSource {
     }
 
     final result = await GraphQLClientService.executeQuery(
-      query: ApiConstants.userCoursesQuery,
+      query: CourseApiConstants.userCoursesQuery,
       variables: variables,
       requiresAuth: true,
     );
@@ -119,7 +119,7 @@ class CourseRemoteDataSourceImpl implements CourseRemoteDataSource {
     }
 
     final result = await GraphQLClientService.executeQuery(
-      query: ApiConstants.myCoursesQuery,
+      query: CourseApiConstants.myCoursesQuery,
       variables: variables,
       requiresAuth: true,
     );

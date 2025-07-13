@@ -1,6 +1,6 @@
-import '../../../../core/constants/api_constants.dart';
 import '../../../../core/network/graphql_client.dart';
 import '../../../authentication/data/models/user_model.dart';
+import '../constants/profile_api_constants.dart';
 
 abstract class ProfileRemoteDataSource {
   Future<UserModel> getSelfInfo();
@@ -16,7 +16,7 @@ class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
   @override
   Future<UserModel> getSelfInfo() async {
     final result = await GraphQLClientService.executeQuery(
-      query: ApiConstants.selfInfoQuery,
+      query: ProfileApiConstants.selfInfoQuery,
       requiresAuth: true,
     );
 
@@ -47,7 +47,7 @@ class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
     if (imageUrl != null) variables['imageUrl'] = imageUrl;
 
     final result = await GraphQLClientService.executeMutation(
-      mutation: ApiConstants.updateSelfInfoMutation,
+      mutation: ProfileApiConstants.updateSelfInfoMutation,
       variables: {
         'input': variables,
       },

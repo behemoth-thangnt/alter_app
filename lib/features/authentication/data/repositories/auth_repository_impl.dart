@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import '../../../../core/constants/api_constants.dart';
 import '../../../../core/error/failures.dart';
 import '../../../../core/network/graphql_client.dart';
+import '../constants/auth_api_constants.dart';
 import '../../domain/entities/auth_profile.dart';
 import '../../domain/entities/auth_tokens.dart';
 import '../../domain/repositories/auth_repository.dart';
@@ -26,12 +26,10 @@ class AuthRepositoryImpl implements AuthRepository {
   }) async {
     try {
       final result = await GraphQLClientService.executeMutation(
-        mutation: ApiConstants.signInMutation,
+        mutation: AuthApiConstants.signInMutation,
         variables: {
-          'input': {
-            'identifier': identifier,
-            'password': password,
-          },
+          'identifier': identifier,
+          'password': password,
         },
         requiresAuth: false,
       );

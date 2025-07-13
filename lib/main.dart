@@ -4,9 +4,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 // Core
 import 'core/navigation/app_router.dart';
 import 'core/storage/secure_storage.dart';
+import 'core/config/environment_config.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize environment configuration
+  await EnvironmentConfig.initialize();
 
   // Initialize secure storage
   await SecureStorage.init();

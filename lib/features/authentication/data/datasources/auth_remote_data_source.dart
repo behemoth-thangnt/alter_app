@@ -1,6 +1,6 @@
-import '../../../../core/constants/api_constants.dart';
 import '../../../../core/network/graphql_client.dart';
 import '../models/auth_profile_model.dart';
+import '../constants/auth_api_constants.dart';
 
 abstract class AuthRemoteDataSource {
   Future<AuthProfileModel> signIn({
@@ -18,12 +18,10 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     required String password,
   }) async {
     final result = await GraphQLClientService.executeMutation(
-      mutation: ApiConstants.signInMutation,
+      mutation: AuthApiConstants.signInMutation,
       variables: {
-        'input': {
-          'identifier': identifier,
-          'password': password,
-        },
+        'identifier': identifier,
+        'password': password,
       },
       requiresAuth: false,
     );

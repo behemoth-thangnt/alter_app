@@ -7,6 +7,9 @@
 .buildlog/
 .history
 
+# Environment files
+.env
+
 
 
 # Flutter repo-specific
@@ -119,3 +122,4 @@ app.*.symbols
 !/dev/ci/**/Gemfile.lock
 
 docs/*.graphql
+.env
