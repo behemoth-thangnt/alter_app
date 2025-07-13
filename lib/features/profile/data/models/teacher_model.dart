@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import '../../domain/entities/teacher.dart';
+import '../../../../core/entities/teacher.dart';
 
 part 'teacher_model.g.dart';
 

@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import '../../../../core/error/failures.dart';
 import '../../../../core/usecases/usecase.dart';
-import '../../../../shared/domain/entities/user.dart';
+import '../../../../core/entities/user.dart';
 import '../repositories/profile_repository.dart';
 
 class GetSelfInfoUseCase implements UseCase<User, NoParams> {

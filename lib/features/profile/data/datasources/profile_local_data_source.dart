@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../../../../core/constants/storage_constants.dart';
-import '../../../../shared/data/models/user_model.dart';
+import '../../../authentication/data/models/user_model.dart';
 
 abstract class ProfileLocalDataSource {
   Future<UserModel?> getCachedSelfInfo();

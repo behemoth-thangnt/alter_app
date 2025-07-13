@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-import '../../../../shared/domain/entities/user.dart';
-import '../../../../shared/domain/entities/teacher.dart';
+import '../../../../core/entities/user.dart';
+import '../../../../core/entities/teacher.dart';
 
 class AuthProfile extends Equatable {
   final String id;

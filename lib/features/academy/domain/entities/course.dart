@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import '../../../../shared/domain/entities/teacher.dart';
+import '../../../../core/entities/teacher.dart';
 
 class Course extends Equatable {
   final int id;

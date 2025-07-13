@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import '../../../../core/error/failures.dart';
-import '../../../../shared/domain/entities/user.dart';
+import '../../../../core/entities/user.dart';
 import '../../domain/repositories/profile_repository.dart';
 import '../datasources/profile_local_data_source.dart';
 import '../datasources/profile_remote_data_source.dart';

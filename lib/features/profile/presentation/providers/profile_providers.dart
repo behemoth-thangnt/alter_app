@@ -1,5 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import '../../../../shared/domain/entities/user.dart';
+import '../../../../core/entities/user.dart';
 import '../../data/datasources/profile_local_data_source.dart';
 import '../../data/datasources/profile_remote_data_source.dart';
 import '../../data/repositories/profile_repository_impl.dart';

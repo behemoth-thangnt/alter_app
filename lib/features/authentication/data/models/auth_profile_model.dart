@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import '../../domain/entities/auth_profile.dart';
-import '../../../../shared/domain/entities/user.dart';
-import '../../../../shared/domain/entities/teacher.dart';
+import '../../../../core/entities/user.dart';
+import '../../../../core/entities/teacher.dart';
 
 part 'auth_profile_model.g.dart';
 

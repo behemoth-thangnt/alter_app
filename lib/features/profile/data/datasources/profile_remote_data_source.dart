@@ -1,6 +1,6 @@
 import '../../../../core/constants/api_constants.dart';
 import '../../../../core/network/graphql_client.dart';
-import '../../../../shared/data/models/user_model.dart';
+import '../../../authentication/data/models/user_model.dart';
 
 abstract class ProfileRemoteDataSource {
   Future<UserModel> getSelfInfo();

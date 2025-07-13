@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/profile_providers.dart';
 import '../widgets/profile_form.dart';
 import '../../../authentication/presentation/providers/auth_providers.dart';
-import '../../../../shared/domain/entities/user.dart';
+import '../../../../core/entities/user.dart';
 
 class ProfilePage extends ConsumerStatefulWidget {
   const ProfilePage({super.key});
