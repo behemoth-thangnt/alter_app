@@ -79,12 +79,7 @@ class AuthRepositoryImpl implements AuthRepository {
         username: profileData['username'] as String?,
         email: profileData['email'] as String?,
         phoneNumber: profileData['phoneNumber'] as String?,
-        teacher: profileData['teacher'] != null
-            ? _parseTeacher(profileData['teacher'])
-            : null,
-        user: profileData['user'] != null
-            ? _parseUser(profileData['user'])
-            : null,
+        user: _parseUser(profileData['user']),
       );
 
       // Save authentication data locally
@@ -151,10 +146,6 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   // Helper methods for parsing nested objects
-  AuthTeacherModel _parseTeacher(Map<String, dynamic> teacherData) {
-    return AuthTeacherModel.fromJson(teacherData);
-  }
-
   AuthUserModel _parseUser(Map<String, dynamic> userData) {
     return AuthUserModel.fromJson(userData);
   }

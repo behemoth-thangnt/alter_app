@@ -6,7 +6,7 @@ part of 'core_providers.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$secureStorageHash() => r'd32760aa1df15788290100a01b620a556d1c50cb';
+String _$secureStorageHash() => r'493c5de81d0d8c369c4450c51217fdecea2f7a69';
 
 /// See also [secureStorage].
 @ProviderFor(secureStorage)
@@ -23,7 +23,7 @@ final secureStorageProvider = AutoDisposeProvider<SecureStorage>.internal(
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
 typedef SecureStorageRef = AutoDisposeProviderRef<SecureStorage>;
-String _$sharedPreferencesHash() => r'7cd30c9640ca952d1bcf1772c709fc45dc47c8b3';
+String _$sharedPreferencesHash() => r'dc403fbb1d968c7d5ab4ae1721a29ffe173701c7';
 
 /// See also [sharedPreferences].
 @ProviderFor(sharedPreferences)

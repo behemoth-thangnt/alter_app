@@ -7,7 +7,7 @@ part of 'profile_providers.dart';
 // **************************************************************************
 
 String _$profileRemoteDataSourceHash() =>
-    r'e4c1c1887a1b6a88fcdd478fced427961e477780';
+    r'f1abd6607c606939e3a5f9dafd53e7ae8de41419';
 
 /// See also [profileRemoteDataSource].
 @ProviderFor(profileRemoteDataSource)
@@ -27,7 +27,7 @@ final profileRemoteDataSourceProvider =
 typedef ProfileRemoteDataSourceRef
     = AutoDisposeProviderRef<ProfileRemoteDataSource>;
 String _$profileLocalDataSourceHash() =>
-    r'cf8b0454ce74b0c966cb521b2709f5e1a1d54502';
+    r'0470d13ca0d3cad3b685ded3efd9155da9dca3da';
 
 /// See also [profileLocalDataSource].
 @ProviderFor(profileLocalDataSource)
@@ -46,7 +46,7 @@ final profileLocalDataSourceProvider =
 // ignore: unused_element
 typedef ProfileLocalDataSourceRef
     = AutoDisposeProviderRef<ProfileLocalDataSource>;
-String _$profileRepositoryHash() => r'69324effb280af74c1ae647b2bc91f7d725fb322';
+String _$profileRepositoryHash() => r'f0bba5ce095b4dd1ddd1567b0295f4c9e952265f';
 
 /// See also [profileRepository].
 @ProviderFor(profileRepository)
@@ -65,7 +65,7 @@ final profileRepositoryProvider =
 // ignore: unused_element
 typedef ProfileRepositoryRef = AutoDisposeProviderRef<ProfileRepository>;
 String _$getSelfInfoUseCaseHash() =>
-    r'ee0e41e27c8755f3c311c3402674bca4f74d07eb';
+    r'6acbdda87f1d38db99bb59dadd5859aee6dcef76';
 
 /// See also [getSelfInfoUseCase].
 @ProviderFor(getSelfInfoUseCase)
@@ -84,7 +84,7 @@ final getSelfInfoUseCaseProvider =
 // ignore: unused_element
 typedef GetSelfInfoUseCaseRef = AutoDisposeProviderRef<GetSelfInfoUseCase>;
 String _$updateSelfInfoUseCaseHash() =>
-    r'4c59de0d8ca415cf5335dc58cb5b6ded8839427a';
+    r'7df8cd5b0e781ee7f7c796c94a1b93780e37b4d4';
 
 /// See also [updateSelfInfoUseCase].
 @ProviderFor(updateSelfInfoUseCase)

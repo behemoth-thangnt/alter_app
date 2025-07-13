@@ -1,4 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/providers/core_providers.dart';
 import '../../data/datasources/auth_local_data_source.dart';
 import '../../data/datasources/auth_remote_data_source.dart';
@@ -14,12 +15,12 @@ part 'auth_providers.g.dart';
 
 // Data Sources
 @riverpod
-AuthRemoteDataSource authRemoteDataSource(AuthRemoteDataSourceRef ref) {
+AuthRemoteDataSource authRemoteDataSource(Ref ref) {
   return AuthRemoteDataSourceImpl();
 }
 
 @riverpod
-AuthLocalDataSource authLocalDataSource(AuthLocalDataSourceRef ref) {
+AuthLocalDataSource authLocalDataSource(Ref ref) {
   return AuthLocalDataSourceImpl(
     secureStorage: ref.watch(secureStorageProvider),
   );
@@ -27,7 +28,7 @@ AuthLocalDataSource authLocalDataSource(AuthLocalDataSourceRef ref) {
 
 // Repository
 @riverpod
-AuthRepository authRepository(AuthRepositoryRef ref) {
+AuthRepository authRepository(Ref ref) {
   return AuthRepositoryImpl(
     remoteDataSource: ref.watch(authRemoteDataSourceProvider),
     localDataSource: ref.watch(authLocalDataSourceProvider),
@@ -36,18 +37,17 @@ AuthRepository authRepository(AuthRepositoryRef ref) {
 
 // Use Cases
 @riverpod
-SignInUseCase signInUseCase(SignInUseCaseRef ref) {
+SignInUseCase signInUseCase(Ref ref) {
   return SignInUseCase(ref.watch(authRepositoryProvider));
 }
 
 @riverpod
-SignOutUseCase signOutUseCase(SignOutUseCaseRef ref) {
+SignOutUseCase signOutUseCase(Ref ref) {
   return SignOutUseCase(ref.watch(authRepositoryProvider));
 }
 
 @riverpod
-GetCurrentProfileUseCase getCurrentProfileUseCase(
-    GetCurrentProfileUseCaseRef ref) {
+GetCurrentProfileUseCase getCurrentProfileUseCase(Ref ref) {
   return GetCurrentProfileUseCase(ref.watch(authRepositoryProvider));
 }
 

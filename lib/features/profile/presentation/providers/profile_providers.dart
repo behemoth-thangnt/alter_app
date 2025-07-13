@@ -1,4 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/entities/user.dart';
 import '../../data/datasources/profile_local_data_source.dart';
 import '../../data/datasources/profile_remote_data_source.dart';
@@ -12,19 +13,18 @@ part 'profile_providers.g.dart';
 
 // Data Sources
 @riverpod
-ProfileRemoteDataSource profileRemoteDataSource(
-    ProfileRemoteDataSourceRef ref) {
+ProfileRemoteDataSource profileRemoteDataSource(Ref ref) {
   return ProfileRemoteDataSourceImpl();
 }
 
 @riverpod
-ProfileLocalDataSource profileLocalDataSource(ProfileLocalDataSourceRef ref) {
+ProfileLocalDataSource profileLocalDataSource(Ref ref) {
   return ProfileLocalDataSourceImpl();
 }
 
 // Repository
 @riverpod
-ProfileRepository profileRepository(ProfileRepositoryRef ref) {
+ProfileRepository profileRepository(Ref ref) {
   return ProfileRepositoryImpl(
     remoteDataSource: ref.watch(profileRemoteDataSourceProvider),
     localDataSource: ref.watch(profileLocalDataSourceProvider),
@@ -33,12 +33,12 @@ ProfileRepository profileRepository(ProfileRepositoryRef ref) {
 
 // Use Cases
 @riverpod
-GetSelfInfoUseCase getSelfInfoUseCase(GetSelfInfoUseCaseRef ref) {
+GetSelfInfoUseCase getSelfInfoUseCase(Ref ref) {
   return GetSelfInfoUseCase(ref.watch(profileRepositoryProvider));
 }
 
 @riverpod
-UpdateSelfInfoUseCase updateSelfInfoUseCase(UpdateSelfInfoUseCaseRef ref) {
+UpdateSelfInfoUseCase updateSelfInfoUseCase(Ref ref) {
   return UpdateSelfInfoUseCase(ref.watch(profileRepositoryProvider));
 }
 

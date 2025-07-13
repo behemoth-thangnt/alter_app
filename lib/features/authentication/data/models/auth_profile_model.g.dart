@@ -6,22 +6,6 @@ part of 'auth_profile_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-AuthTeacherModel _$AuthTeacherModelFromJson(Map<String, dynamic> json) =>
-    AuthTeacherModel(
-      id: (json['id'] as num).toInt(),
-      name: json['name'] as String,
-      slug: json['slug'] as String,
-      imageUrl: json['imageUrl'] as String?,
-    );
-
-Map<String, dynamic> _$AuthTeacherModelToJson(AuthTeacherModel instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'slug': instance.slug,
-      'imageUrl': instance.imageUrl,
-    };
-
 AuthUserModel _$AuthUserModelFromJson(Map<String, dynamic> json) =>
     AuthUserModel(
       id: (json['id'] as num).toInt(),
@@ -52,12 +36,7 @@ AuthProfileModel _$AuthProfileModelFromJson(Map<String, dynamic> json) =>
       username: json['username'] as String?,
       email: json['email'] as String?,
       phoneNumber: json['phoneNumber'] as String?,
-      teacherModel: json['teacher'] == null
-          ? null
-          : AuthTeacherModel.fromJson(json['teacher'] as Map<String, dynamic>),
-      userModel: json['user'] == null
-          ? null
-          : AuthUserModel.fromJson(json['user'] as Map<String, dynamic>),
+      userModel: AuthUserModel.fromJson(json['user'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$AuthProfileModelToJson(AuthProfileModel instance) =>
@@ -66,6 +45,5 @@ Map<String, dynamic> _$AuthProfileModelToJson(AuthProfileModel instance) =>
       'username': instance.username,
       'email': instance.email,
       'phoneNumber': instance.phoneNumber,
-      'teacher': instance.teacherModel,
       'user': instance.userModel,
     };

@@ -1,37 +1,12 @@
 import 'package:json_annotation/json_annotation.dart';
 import '../../domain/entities/auth_profile.dart';
 import '../../../../core/entities/user.dart';
-import '../../../../core/entities/teacher.dart';
 
 part 'auth_profile_model.g.dart';
 
 @JsonSerializable()
-class AuthTeacherModel extends Teacher {
-  AuthTeacherModel({
-    required super.id,
-    required super.name,
-    required super.slug,
-    super.imageUrl,
-  }) : super(
-          active:
-              true, // Default values for required fields not in API response
-          basicEntered: true,
-          canInviteStudents: false,
-          approvedCourseCount: 0,
-          studentCount: 0,
-          createdAt: DateTime.fromMillisecondsSinceEpoch(0),
-          updatedAt: DateTime.fromMillisecondsSinceEpoch(0),
-        );
-
-  factory AuthTeacherModel.fromJson(Map<String, dynamic> json) =>
-      _$AuthTeacherModelFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AuthTeacherModelToJson(this);
-}
-
-@JsonSerializable()
 class AuthUserModel extends User {
-  AuthUserModel({
+  const AuthUserModel({
     required super.id,
     required super.name,
     super.imageUrl,
@@ -53,21 +28,16 @@ class AuthUserModel extends User {
 
 @JsonSerializable()
 class AuthProfileModel extends AuthProfile {
-  @JsonKey(name: 'teacher')
-  final AuthTeacherModel? teacherModel;
-
   @JsonKey(name: 'user')
-  final AuthUserModel? userModel;
+  final AuthUserModel userModel;
 
   const AuthProfileModel({
     required super.id,
     super.username,
     super.email,
     super.phoneNumber,
-    this.teacherModel,
-    this.userModel,
+    required this.userModel,
   }) : super(
-          teacher: teacherModel,
           user: userModel,
         );
 
@@ -82,26 +52,16 @@ class AuthProfileModel extends AuthProfile {
       username: profile.username,
       email: profile.email,
       phoneNumber: profile.phoneNumber,
-      teacherModel: profile.teacher != null
-          ? AuthTeacherModel(
-              id: profile.teacher!.id,
-              name: profile.teacher!.name,
-              slug: profile.teacher!.slug,
-              imageUrl: profile.teacher!.imageUrl,
-            )
-          : null,
-      userModel: profile.user != null
-          ? AuthUserModel(
-              id: profile.user!.id,
-              name: profile.user!.name,
-              imageUrl: profile.user!.imageUrl,
-              phoneNumber: profile.user!.phoneNumber,
-              gender: profile.user!.gender,
-              birthDate: profile.user!.birthDate,
-              createdAt: profile.user!.createdAt,
-              updatedAt: profile.user!.updatedAt,
-            )
-          : null,
+      userModel: AuthUserModel(
+        id: profile.user.id,
+        name: profile.user.name,
+        imageUrl: profile.user.imageUrl,
+        phoneNumber: profile.user.phoneNumber,
+        gender: profile.user.gender,
+        birthDate: profile.user.birthDate,
+        createdAt: profile.user.createdAt,
+        updatedAt: profile.user.updatedAt,
+      ),
     );
   }
 }

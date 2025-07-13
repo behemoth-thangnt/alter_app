@@ -7,7 +7,7 @@ part of 'auth_providers.dart';
 // **************************************************************************
 
 String _$authRemoteDataSourceHash() =>
-    r'81623d7edccdf752d906b3ed575e7d500a107f64';
+    r'b6a9edd1b6c48be8564688bac362316f598b4432';
 
 /// See also [authRemoteDataSource].
 @ProviderFor(authRemoteDataSource)
@@ -26,7 +26,7 @@ final authRemoteDataSourceProvider =
 // ignore: unused_element
 typedef AuthRemoteDataSourceRef = AutoDisposeProviderRef<AuthRemoteDataSource>;
 String _$authLocalDataSourceHash() =>
-    r'27d46b75829366899d4c7a99297c19d85490dee6';
+    r'6e6b550de9077f9cbbe48f946fcecaa387f192e0';
 
 /// See also [authLocalDataSource].
 @ProviderFor(authLocalDataSource)
@@ -44,7 +44,7 @@ final authLocalDataSourceProvider =
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
 typedef AuthLocalDataSourceRef = AutoDisposeProviderRef<AuthLocalDataSource>;
-String _$authRepositoryHash() => r'6fe5f7f61aaba6c16264114d45f69d9b05ee2e64';
+String _$authRepositoryHash() => r'2d6cc2aac0b74ed2704710d43300c4260b3c5bc5';
 
 /// See also [authRepository].
 @ProviderFor(authRepository)
@@ -61,7 +61,7 @@ final authRepositoryProvider = AutoDisposeProvider<AuthRepository>.internal(
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
 typedef AuthRepositoryRef = AutoDisposeProviderRef<AuthRepository>;
-String _$signInUseCaseHash() => r'd8c4ca8799d3c785d724fcb12259fb8cb5c6f7aa';
+String _$signInUseCaseHash() => r'c6ac204cf3d8d14a9b5a14afd07c9c51c304a5c8';
 
 /// See also [signInUseCase].
 @ProviderFor(signInUseCase)
@@ -78,7 +78,7 @@ final signInUseCaseProvider = AutoDisposeProvider<SignInUseCase>.internal(
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
 typedef SignInUseCaseRef = AutoDisposeProviderRef<SignInUseCase>;
-String _$signOutUseCaseHash() => r'3e06d6c315dc4710dd995e6114538ae28f4c3336';
+String _$signOutUseCaseHash() => r'952ce342ca22dc7bb696cc8e5787d2889240ef98';
 
 /// See also [signOutUseCase].
 @ProviderFor(signOutUseCase)
@@ -96,7 +96,7 @@ final signOutUseCaseProvider = AutoDisposeProvider<SignOutUseCase>.internal(
 // ignore: unused_element
 typedef SignOutUseCaseRef = AutoDisposeProviderRef<SignOutUseCase>;
 String _$getCurrentProfileUseCaseHash() =>
-    r'62fa4cbf44b689aca9ed7e2398d922e177aec54d';
+    r'5f7148ea13020ab11b4456f976c8e67e70daf650';
 
 /// See also [getCurrentProfileUseCase].
 @ProviderFor(getCurrentProfileUseCase)
